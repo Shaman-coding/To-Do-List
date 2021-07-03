@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { GlobalStyles } from "./components/DarkMode/GlobalStyles";
+import {lightTheme, darkTheme} from './components/DarkMode/Theme.jsx';
+import { useState} from "react";
+import {ThemeProvider} from "styled-components";
+import Header from "./components/header/header";
+import MainContainer from "./components/mainWindow/mainContainer";
+import {Route} from 'react-router-dom';
+import FinishedTask from "./components/finishedTask/finishedTask";
 
-function App() {
+function App () {
+    const [theme, setTheme] = useState([]);
+    const themeToggler = () => {
+        theme === 'light' ? setTheme('dark') : setTheme('light');
+
+    }
+    const themes = theme === 'light' ? 'Темная тема' : 'Светлая тема'
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div>
+            <ThemeProvider theme = {theme === 'light' ? lightTheme : darkTheme}>
+                <GlobalStyles/>
+                <Header themeToggler={themeToggler} themes = { themes }/>
+            </ThemeProvider>
+        </div>
+
+        <MainContainer/>
+        <Route path={'/finishedTask'} render = {() => <FinishedTask/>}/>
     </div>
   );
 }

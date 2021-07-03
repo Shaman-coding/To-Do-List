@@ -1,0 +1,35 @@
+.wrapperBlock {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn {
+    margin-left: 10px;
+}
+
+.fieldsForTusk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 39px;
+
+}
+.tuskBlock {
+    margin-right: 15px;
+}
+.delite {
+    margin-right: 15px;
+}
+.check {
+    margin-right: 10px;
+}
+
+.tuskItems {
+    display: flex;
+    margin-top: 16px;
+}
+
+.tuskCount {
+    margin-right: 10px;
+}

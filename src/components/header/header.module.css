@@ -1,0 +1,17 @@
+.title {
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 60px;
+    text-align: center;
+}
+
+.containerMain {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+.changeTheme {
+    cursor: pointer;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+}
