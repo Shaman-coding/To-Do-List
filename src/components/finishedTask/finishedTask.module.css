@@ -1,0 +1,11 @@
+.containers {
+    text-align: center;
+}
+.finTisksBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.finItems {
+   margin: 15px;
+}

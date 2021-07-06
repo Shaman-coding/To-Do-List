@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {addNewTusk, CurentTusks, removeTusk} from "../../redux/redusers/redusersTusk";
+import {addNewTusk, CurentTusks, finished, removeTusk} from "../../redux/redusers/redusersTusk";
 import MainFile from "./mainFiles";
 
 
@@ -21,8 +21,10 @@ const mapDispatchToProp = (dispatch) => {
         },
         removeTusk: (id) => {
             dispatch(removeTusk(id))
+        },
+        finishedTusk: (idFinishedTusk,id) => {
+            dispatch(finished(idFinishedTusk,id))
         }
-
     }
 }
 

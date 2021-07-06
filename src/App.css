@@ -1,0 +1,16 @@
+.App {
+    display: grid;
+    grid-template-areas:
+    "h"
+    "c"
+    ;
+
+}
+.content {
+    grid-area: c;
+}
+
+
+.iconsThem {
+    width: 50px;
+}

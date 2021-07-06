@@ -2,9 +2,13 @@ import React from 'react';
 import M from "./mainStyle.module.css";
 import { Form } from 'react-bootstrap';
 
-const MainFile = ({Alltusk, tusks, addNewTusk, currentTusks, removeTusk}) => {
+const MainFile = ({Alltusk, tusks, addNewTusk, currentTusks, removeTusk, finishedTusk}) => {
     const handleChange = (e) => {
         currentTusks(e.target.value)
+    }
+
+    const onToChange = (idFinishedTusk, id) => {
+        finishedTusk(idFinishedTusk, id)
     }
 
     return (
@@ -23,10 +27,9 @@ const MainFile = ({Alltusk, tusks, addNewTusk, currentTusks, removeTusk}) => {
             <div className={M.fieldsForTusk}>
                 <div>
                     {Alltusk.map(tus => <div className={M.tuskItems}>
-                        <Form.Check name={'check'} className={M.check } aria-label="option 1" />
-                        <div>{tus.tusk}</div>
-
-                        <div><button className={M.btn} onClick={() => removeTusk(tus.id)} >Удалить</button></div>
+                        <Form.Check name={'check'} onChange={() => onToChange(tus.tusk,tus.id) }  aria-label="option 1" />
+                        <div className={M.tuskItem}>{tus.tusk}</div>
+                        <div><button className={M.btn} onClick={() => removeTusk(tus.id)}>Удалить</button></div>
                     </div>)}
                 </div>
 
